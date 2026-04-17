@@ -126,7 +126,7 @@ export function LowCustomHighDebtRoute() {
 
       <GoabCircularProgress visible={showProgress} variant="fullscreen" size="large" message="Processing your form..." />
 
-      <div style={{ marginBottom: "17px", width: "100%" }}>
+      <div style={{ marginBottom: "17px", width: "100%", height: "108px" }}>
         <div style={{ fontSize: "14px", marginBottom: "4px" }}>This is text input *</div>
         <div style={{ fontSize: "12px", color: "#555", marginBottom: "6px" }}>You can add helper text to provide additional context to the user.</div>
           <GoabInput
@@ -140,7 +140,7 @@ export function LowCustomHighDebtRoute() {
           />
       </div>
 
-      <div style={{ marginBottom: "17px" }}>
+      <div style={{ marginBottom: "17px", height: "74px" }}>
         <div style={{ fontSize: "14px", marginBottom: "4px" }}>Email input</div>
           <GoabInputEmail
             width="100%" 
@@ -153,7 +153,7 @@ export function LowCustomHighDebtRoute() {
           />    
       </div>
 
-      <div style={{ marginBottom: "17px" }}>
+      <div style={{ marginBottom: "17px", height: "74px" }}>
         <div style={{ fontSize: "14px", marginBottom: "4px" }}>Phone number input</div>
           <GoabInputTel
             width="100%" 
@@ -166,7 +166,7 @@ export function LowCustomHighDebtRoute() {
           />    
       </div>
 
-      <div style={{ marginBottom: "18px" }}>
+      <div style={{ marginBottom: "18px", height: "204px" }}>
         <div style={{ fontSize: "14px", marginBottom: "4px" }}>Text area</div>
         <div style={{ fontSize: "12px", color: "#555", marginBottom: "6px" }}>The text area can count the number of characters a user inputs.</div>
           <GoabTextArea
@@ -182,7 +182,7 @@ export function LowCustomHighDebtRoute() {
           />
       </div>
 
-      <div style={{ marginBottom: "20px" }}>
+      <div style={{ marginBottom: "20px", height: "107px" }}>
         <div style={{ fontSize: "14px", marginBottom: "7px" }}>Do you want to show another type of input?</div>
           <GoabRadioGroup
             name="moreInput"
