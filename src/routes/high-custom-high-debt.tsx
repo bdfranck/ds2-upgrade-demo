@@ -102,11 +102,11 @@ export function HighCustomHighDebtRoute() {
 					<GoabContainer heading="New reminder">
 						<div className="new-reminder-form">
 							<GoabFormItem label="Title">
-								<GoabInput width="100%" name="title" value="" />
+								<GoabInput width="100%" name="title" value="" onChange={() => {}} />
 							</GoabFormItem>
 
 							<GoabFormItem label="Due">
-								<GoabInput width="100%" name="due" value="Apr 12, 2018" />
+								<GoabInput width="100%" name="due" value="Apr 12, 2018" onChange={() => {}} />
 							</GoabFormItem>
 
 							<div className="worker-table-header" role="presentation">

@@ -14,6 +14,7 @@ export const HomeRoute = () => {
       <ul>
         <li><Link to="/low-custom-low-debt">Low custom + Low debt</Link></li>
         <li><Link to="/low-custom-high-debt">Low custom + High debt</Link></li>
+        <li><Link to="/high-custom-high-debt">High custom + High debt (static layout)</Link></li>
         
       </ul>
 

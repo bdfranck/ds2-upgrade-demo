@@ -6,6 +6,7 @@ import "@abgov/web-components";
 
 import { LowCustomLowDebtRoute } from './routes/low-custom-low-debt';
 import { LowCustomHighDebtRoute } from './routes/low-custom-high-debt';
+import { HighCustomHighDebtRoute } from './routes/high-custom-high-debt';
 import { HomeRoute } from './routes/home';
 import App from './App';
 
@@ -19,6 +20,7 @@ root.render(
         <Route path="/" element={<App />}>
           <Route path="low-custom-low-debt" element={<LowCustomLowDebtRoute />} />
           <Route path="low-custom-high-debt" element={<LowCustomHighDebtRoute />} />
+          <Route path="high-custom-high-debt" element={<HighCustomHighDebtRoute />} />
           <Route path="/" element={<HomeRoute />} />
         </Route>
       </Routes>

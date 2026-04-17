@@ -1,1 +1,24 @@
 @import "@abgov/web-components/index.css";
+
+.low-custom-high-debt-debt {
+	font-family: Arial, sans-serif !important;
+	max-width: 760px !important;
+    padding-top: 60px !important;
+}
+
+.low-custom-high-debt-debt * {
+	border-radius: 0 !important;
+	letter-spacing: 0 !important;
+}
+
+.low-custom-high-debt-debt goa-input,
+.low-custom-high-debt-debt goa-textarea,
+.low-custom-high-debt-debt goa-input-email,
+.low-custom-high-debt-debt goa-input-tel {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+.low-custom-high-debt-debt goa-button {
+	min-width: 142px !important;
+}
