@@ -221,9 +221,12 @@ export function LowCustomHighDebtRoute() {
         </div>
       }
 
-      <div style={{ display: "flex", justifyContent: "flex-start", gap: "9px", marginTop: "15px", marginBottom: "80px" }}>
+      <div style={{ marginTop: "15px", marginBottom: "80px", position: "relative" }}>
         <GoabButton type="secondary" onClick={() => navigate("/") }>Cancel form</GoabButton>
-        <GoabButton type="primary" onClick={save}>Save and continue</GoabButton>
+        
+        <div style={{ position: "absolute", left: "136px", top: 0 }}>
+          <GoabButton type="primary" onClick={save}>Save and continue</GoabButton>
+        </div>
       </div>
 
       <GoabModal
