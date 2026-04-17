@@ -1,0 +1,75 @@
+name: PR Preview
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: pr-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        if: github.event.action != 'closed'
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        if: github.event.action != 'closed'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        if: github.event.action != 'closed'
+        run: npm ci
+
+      - name: Build preview
+        if: github.event.action != 'closed'
+        run: npm run build -- --base "/ds2-upgrade-demo/pr-preview/pr-${{ github.event.pull_request.number }}/"
+
+      - name: Seed Pages root index
+        if: github.event.action != 'closed'
+        run: |
+          mkdir -p .preview-root
+          cat << 'EOF' > .preview-root/index.html
+          <!doctype html>
+          <html lang="en">
+            <head>
+              <meta charset="utf-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1" />
+              <title>PR previews</title>
+            </head>
+            <body>
+              <h1>PR previews</h1>
+              <p>Open a pull request preview under <code>/pr-preview/pr-&lt;number&gt;/</code>.</p>
+            </body>
+          </html>
+          EOF
+
+      - name: Publish root index to gh-pages
+        if: github.event.action != 'closed'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./.preview-root
+          keep_files: true
+          enable_jekyll: false
+
+      - name: Publish PR preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./dist
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: auto
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
