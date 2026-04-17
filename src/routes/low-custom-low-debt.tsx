@@ -62,7 +62,7 @@ function reducer(state: InfoState, action: Action): InfoState {
   }
 }
 
-export function BasicFormRoute() {
+export function LowCustomLowDebtRoute() {
 
   const navigate = useNavigate();
   const [showSaveConfirmation, setShowSaveConfirmation] = useState<boolean>(false);

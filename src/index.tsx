@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import "@abgov/web-components";
 
-import { BasicFormRoute } from './routes/basic-form';
-import { BasicFormSuccessRoute } from './routes/basic-form-success';
+import { LowCustomLowDebtRoute } from './routes/low-custom-low-debt';
+import { LowCustomHighDebtRoute } from './routes/low-custom-high-debt';
 import { HomeRoute } from './routes/home';
 import App from './App';
 
@@ -17,8 +17,8 @@ root.render(
     <Router>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route path="basic-form-success" element={<BasicFormSuccessRoute />} />
-          <Route path="basic-form" element={<BasicFormRoute />} />
+          <Route path="low-custom-low-debt" element={<LowCustomLowDebtRoute />} />
+          <Route path="low-custom-high-debt" element={<LowCustomHighDebtRoute />} />
           <Route path="/" element={<HomeRoute />} />
         </Route>
       </Routes>
